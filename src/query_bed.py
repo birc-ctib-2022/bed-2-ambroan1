@@ -15,8 +15,8 @@ def extract_region(features: list[BedLine],
     s, e = 0, N
     while s < e :
         mid = (s + e) // 2
-        if features[mid].chrom_start == start or s == e:
-            break
+        #if features[mid].chrom_start == start or s == e:
+        #    break
         if features[mid].chrom_start < start:
             s = mid + 1
         else: e = mid
