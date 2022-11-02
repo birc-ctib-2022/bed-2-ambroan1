@@ -1,7 +1,7 @@
 """Tool for cleaning up a BED file."""
 
 import argparse  # we use this module for option parsing. See main for details.
-
+from operator import attrgetter 
 import sys
 from typing import TextIO
 from bed import (
