@@ -15,10 +15,8 @@ def sort_file(table: Table) -> None:
         # Here we iterate through all the chromosomes in the file.
         # You need to sort `features` with respect to chrom_start
         # and then updatte the table
-
-        features.sort(key = lambda x: x[1])
-        table[chrom] = features  # features should be sorted here
-
+        table[chrom] =  features.sort(key=attrgetter('chrom_start', 'chrom_end', 'name'))
+    return None
 
 def print_file(table: Table, outfile: TextIO) -> None:
     """Write the content of table to outfile."""
