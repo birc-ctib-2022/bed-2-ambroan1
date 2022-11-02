@@ -14,6 +14,7 @@ def extract_region(features: list[BedLine],
     N = len(features)
     s, e = 0, N
     while s < e :
+        #print('1')
         mid = (s + e) // 2
         if features[mid].chrom_start == start or s == e:
             break
@@ -22,13 +23,16 @@ def extract_region(features: list[BedLine],
         else: e = mid
     index_s = s
     index_e = s
-    for i in range(s, N):
+    for i in range(index_s, N):
+        #print('2')
         if features[i].chrom_start >= end:
             break
-        index_s +=1
+        index_e +=1
     
     result = features[index_s: index_e]
-
+    #print(result)
+    print(index_s)
+    print(index_e)
     return result
 
 
