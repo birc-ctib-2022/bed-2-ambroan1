@@ -2,8 +2,8 @@
 # all files that start with test_*.py and run all functions with
 # names that start with test_
 
-from bed import BedLine
-from sort_bed import sort_chr
+from filecmp import cmp
+import os
 
 
 os.system('python src/sort_bed.py data/input.bed data/sorted-output.bed' )
