@@ -59,8 +59,16 @@ Once you have implemented a lower bound search for the start of the range, imple
 *Answer the questions below and then push this file to GitHub.*
 
 *How do you use binary search to find the lower bound of a number? How did you have to modify the binary search algorithm?*
+In binary search, we normally get some value of x , and we stop the search when we find it or return False if the value x is not present in the list.
+In our implementation, we loop until the low and high bounds are the same. 
+Like that, we can return the start where the integer that I am looking for is located.
 
 *Would anything be more difficult if the features covered ranges instead of single nucleotides (like real BED files)? What could go wrong, if anything?*
+Yes, our implementation would not work correctly. 
+We could have an overlapping region, and we would need to add some new conditions about the start and end of chromosomes.
 
 *We wrote a tool for merging two BED files, but what if we had a bunch of them? What would the complexity be if we merged them in, one at a time? What would the complexity be if we merged all of the files at the same time?*
-
+The complexity of the merge we have right now is O(N+M), where N and M are the lenghts of the two files.
+If we merged the bed files one by one, it would just be O(N+M+O+..) where N and M and P are the lenghts of our files.
+If we merged the bed files all at once it should take the same amount of time, as there is the same number of comparisons,
+but it would probably be harder to implement.
